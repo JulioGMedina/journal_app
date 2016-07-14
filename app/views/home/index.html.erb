@@ -1,0 +1,10 @@
+<div>
+  <h2> Write your heart out  </h2>
+  <p>
+    Share your day to day with the world.
+    <% unless user_signed_in? %>
+      <%= link_to 'Sign in', new_user_session_path %> or <%= link_to 'register', new_user_registration_path  %>
+      to get started today!
+    <% end %>
+  </p>
+</div>

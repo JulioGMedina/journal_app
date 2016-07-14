@@ -1,0 +1,9 @@
+<header>
+  <ul>
+    <% if user_signed_in? %>
+        <%= render 'layouts/user_header_links' %>
+    <% else %>
+        <%= render 'layouts/guest_header_links' %>
+    <% end %>
+  </ul>
+</header>
