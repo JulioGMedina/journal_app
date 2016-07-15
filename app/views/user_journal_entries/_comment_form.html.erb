@@ -1,0 +1,10 @@
+<%= form_for Comment.new do |f| %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.hidden_field :journal_entry_id, value: entry.id %>
+  <div>
+    <%= f.text_area :body %>
+  </div>
+  <div>
+    <%= f.submit 'Leave cmment' %>
+  </div>
+<% end %>

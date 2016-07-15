@@ -1,0 +1,10 @@
+<h2> Edi comment </h2>
+
+<%= form_for @comment do |f| %>
+  <div>
+    <%= f.text_area :body %>
+  </div>
+  <div>
+    <%= f.submit 'Update comment' %>
+  </div>
+<% end %>
