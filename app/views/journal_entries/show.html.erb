@@ -1,0 +1,13 @@
+<h2> <%= @entry.user.username %> wrote </h2>
+<p>
+  <%= @entry.content %>
+</p>
+
+<div>
+  <%= link_to 'View other journal entries', user_journal_entries_path(@entry.user) %>
+  <% if current_user == @entry.user %>
+    <%= link_to 'Edit journal entry', edit_user_journal_entry_path(current_user, @entry) %>
+    <%= link_to 'Delete journal entry', user_journal_entry_path(current_user, @entry), method: :delete %>
+  <% end %>
+</div>
+

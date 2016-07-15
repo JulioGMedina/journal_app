@@ -1,0 +1,12 @@
+<h2> Read journals from other members </h2>
+
+<div>
+  <ul>
+    <% @users.each do |user| %>
+      <% next if user == current_user %>
+      <li>
+        <%= link_to "#{user.username}'s journal", user_journal_entries_path(user) %>
+      </li>
+    <% end %>
+  </ul>
+</div>

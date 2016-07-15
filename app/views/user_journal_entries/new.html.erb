@@ -1,0 +1,11 @@
+<h2> Speak your mind </h2>
+<p> Tell others what's been happening </p>
+
+<div>
+  <%= form_for @entry, as: :entry, url: user_journal_entries_path(@user) do |f| %>
+    <%= render 'user_journal_entries/form', f: f %>
+    <div>
+      <%= f.submit 'Create journal entry' %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,10 @@
+<h2> Edit journal entry </h2>
+
+<div>
+  <%= form_for @entry, as: :entry, url: user_journal_entry_path(@user, @entry) do |f| %>
+      <%= render 'user_journal_entries/form', f: f %>
+      <div>
+        <%= f.submit 'Update journal entry' %>
+      </div>
+  <% end %>
+</div>

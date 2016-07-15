@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   devise_for :users,
              path: 'auth'
 
-  resources :journal_entries
+  resources :journal_entries, only: :show
 
-  resources :users, only: :edit do
-    resources :journal_entries, controller: 'user_journal_entries'
+  resources :users, only: [:edit, :index] do
+    resources :journal_entries, except: :show, controller: 'user_journal_entries'
   end
 end

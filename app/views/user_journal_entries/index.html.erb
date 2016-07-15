@@ -1,0 +1,11 @@
+<h2> <%= @user.username %>'s journal entries</h2>
+
+<div>
+  <ul>
+    <% @entries.each do |entry| %>
+      <li>
+        <%= link_to "Entry from #{entry.created_at.to_s(:long)}", journal_entry_path(entry) %>
+      </li>
+    <% end %>
+  </ul>
+</div>
