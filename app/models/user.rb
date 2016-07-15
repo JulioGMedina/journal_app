@@ -8,5 +8,6 @@ class User < ActiveRecord::Base
   validates :username,
             :email, presence: true
 
-  has_many :journal_entries
+  has_many :journal_entries, dependent: :destroy
+  has_many :comments, dependent: :destroy
 end

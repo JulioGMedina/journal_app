@@ -23,4 +23,11 @@ RSpec.describe JournalEntry, type: :model do
       expect(new_entry).to be_persisted
     end
   end
+
+  describe 'associations' do
+    it 'should allow creation of comments' do
+      create(:comment, journal_entry: journal_entry)
+      expect(journal_entry.comments.count).to eq(1)
+    end
+  end
 end
