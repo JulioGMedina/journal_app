@@ -152,4 +152,26 @@ RSpec.describe UserJournalEntriesController, type: :controller do
       end
     end
   end
+
+  describe 'GET #download' do
+    context 'signed in' do
+      before(:each) do
+        sign_in create(:user)
+      end
+
+      it 'should produce correct json' do
+        get :download, user_id: @user.id
+
+        expect(response.body).to eq(@user.journal_entries.to_json(include: :comments))
+        expect(response.header['Content-Type']).to eq('application/json')
+      end
+    end
+
+    context 'guest' do
+      it 'should redirect guests' do
+        get :download, user_id: @user.id
+        expect(response).to have_http_status(:redirect)
+      end
+    end
+  end
 end

@@ -36,6 +36,14 @@ class UserJournalEntriesController< ApplicationController
     redirect_to user_journal_entries_path(@user)
   end
 
+  def download
+    send_data @user.journal_entries.to_json(include: :comments),
+              filename: 'data.json',
+              type: 'application/json',
+              disposition: 'attachment'
+
+  end
+
   private
 
   def set_user

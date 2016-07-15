@@ -9,3 +9,10 @@
     <% end %>
   </ul>
 </div>
+
+<% if @user == current_user %>
+  <div>
+    <%= link_to 'Download all entries and comments', download_user_journal_entries_path(current_user), data: {'turbolinks': false } %>
+  </div>
+<% end %>
+
