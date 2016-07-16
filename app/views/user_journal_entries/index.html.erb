@@ -1,18 +1,29 @@
-<h2> <%= @user.username %>'s journal entries</h2>
+<div class="row">
+  <div class="small-12 columns text-center">
+    <h2> <%= @user.username %>'s journal entries</h2>
+  </div>
+</div>
 
-<div>
-  <ul>
-    <% @entries.each do |entry| %>
-      <li>
-        <%= link_to "Entry from #{entry.created_at.to_s(:long)}", journal_entry_path(entry) %>
-      </li>
-    <% end %>
-  </ul>
+<div cass="row">
+  <div class="small-12 columns text-center">
+    <ul>
+      <% @entries.each do |entry| %>
+          <li>
+            <%= link_to "Entry from #{entry.created_at.to_s(:long)}", journal_entry_path(entry) %>
+          </li>
+      <% end %>
+    </ul>
+  </div>
 </div>
 
 <% if @user == current_user %>
-  <div>
-    <%= link_to 'Download all entries and comments', download_user_journal_entries_path(current_user), data: {'turbolinks': false } %>
-  </div>
+    <div cass="row">
+      <div class="small-12 columns text-center">
+        <%= link_to 'Download all entries and comments',
+                    download_user_journal_entries_path(current_user),
+                    class: 'button small primary',
+                    data: {turbolinks: false} %>
+      </div>
+    </div>
 <% end %>
 

@@ -4,6 +4,13 @@ body {
 
 .content {
   min-height: rem-calc(450);
+  ul {
+    list-style-type: none;
+  }
+  .actions {
+    padding-top: rem-calc(20);
+  }
 }
+
 
 

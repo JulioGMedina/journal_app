@@ -1,11 +1,17 @@
-<h2> Speak your mind </h2>
-<p> Tell others what's been happening </p>
+<div cass="row">
+  <div class="small-12 columns text-center">
+    <h2> Speak your mind and let the world know how you feel</h2>
+  </div>
+</div>
+
 
 <div>
   <%= form_for @entry, as: :entry, url: user_journal_entries_path(@user) do |f| %>
     <%= render 'user_journal_entries/form', f: f %>
-    <div>
-      <%= f.submit 'Create journal entry' %>
-    </div>
+      <div class="row">
+        <div class="small-6 small-centered columns">
+          <%= f.submit "Create journal entry", class: 'small button primary' %>
+        </div>
+      </div>
   <% end %>
 </div>

@@ -1,10 +1,15 @@
-<h2> Edit journal entry </h2>
-
-<div>
-  <%= form_for @entry, as: :entry, url: user_journal_entry_path(@user, @entry) do |f| %>
-      <%= render 'user_journal_entries/form', f: f %>
-      <div>
-        <%= f.submit 'Update journal entry' %>
-      </div>
-  <% end %>
+<div cass="row">
+  <div class="small-12 columns text-center">
+    <h2> Edit journal entry </h2>
+  </div>
 </div>
+
+
+<%= form_for @entry, as: :entry, url: user_journal_entry_path(@user, @entry) do |f| %>
+    <%= render 'user_journal_entries/form', f: f %>
+    <div class="row">
+      <div class="small-6 small-centered columns">
+        <%= f.submit "Update journal entry", class: 'small button primary' %>
+      </div>
+    </div>
+<% end %>

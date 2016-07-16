@@ -1,10 +1,19 @@
-<h2> Edi comment </h2>
+<div class="row">
+  <div class="small-12 columns text-center">
+    <h2> Edi comment </h2>
+  </div>
+</div>
+
 
 <%= form_for @comment do |f| %>
-  <div>
-    <%= f.text_area :body %>
+  <div class="row">
+    <div class="small-6 columns small-centered">
+      <%= f.text_area :body %>
+    </div>
   </div>
-  <div>
-    <%= f.submit 'Update comment' %>
+  <div class="row">
+    <div class="small-6 small-centered columns">
+      <%= f.submit "Create journal entry", class: 'small button primary' %>
+    </div>
   </div>
 <% end %>
