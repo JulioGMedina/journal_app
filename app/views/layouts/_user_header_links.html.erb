@@ -1,12 +1,23 @@
-<li>
-  <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-</li>
-<li>
-  <%= link_to 'Your journal entries', user_journal_entries_path(current_user) %>
-</li>
-<li>
-  <%= link_to "Write a new journal entry", new_user_journal_entry_path(current_user) %>
-</li>
-<li>
-  <%= link_to 'Read journal entries from others', users_path %>
-</li>
+<ul class="dropdown menu" data-dropdown-menu>
+  <li>
+    <%= link_to current_user.username, '#' %>
+    <ul class="menu vertical">
+      <li>
+        <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+      </li>
+      <li>
+        <%= link_to 'Your journal entries', user_journal_entries_path(current_user) %>
+      </li>
+      <li>
+        <%= link_to "Write a new journal entry", new_user_journal_entry_path(current_user) %>
+      </li>
+      <li>
+        <%= link_to 'Read journal entries from others', users_path %>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+
+

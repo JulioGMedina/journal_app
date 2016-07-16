@@ -1,9 +1,18 @@
-<header>
-  <ul>
+<div class="top-bar">
+  <div class="top-bar-left">
+    <ul class="menu">
+      <li class="menu-text">Journal App</li>
+    </ul>
+  </div>
+  <div class="top-bar-right">
     <% if user_signed_in? %>
         <%= render 'layouts/user_header_links' %>
     <% else %>
         <%= render 'layouts/guest_header_links' %>
     <% end %>
-  </ul>
-</header>
+  </div>
+
+</div>
+
+
+
