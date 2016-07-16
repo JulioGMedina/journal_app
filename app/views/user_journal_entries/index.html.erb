@@ -16,7 +16,7 @@
   </div>
 </div>
 
-<% if @user == current_user %>
+<% if @user == current_user && @entries.present? %>
     <div cass="row">
       <div class="small-12 columns text-center">
         <%= link_to 'Download all entries and comments',
