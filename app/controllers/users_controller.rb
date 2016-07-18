@@ -5,11 +5,4 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  #TODO implement edit / update for user attributes
-  def edit
-
-  end
-
-  def update
-  end
 end
